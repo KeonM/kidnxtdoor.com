@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    line-height: 1.5;
+    color: #111;
+    background-color: #fff;
+  }
+  
+  header {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  nav ul {
+    float: right;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: inline-flex;
+    gap: 1.5rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
