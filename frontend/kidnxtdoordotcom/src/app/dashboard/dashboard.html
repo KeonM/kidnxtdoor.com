@@ -1,23 +1,33 @@
-
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=sensor_door" />
+</head>
 <body>
   <header>
-    
     <nav>
-        <p>Kidnxtdoor</p>
-        <ul>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#team">Team</a></li>
+        <p id="kidnxtdoor">
+          <span class="space1">Kid</span>
+          <span class="space2">nxt</span>
+          <span class="space3">do<span class="material-symbols-outlined">sensor_door</span>r</span>
+        </p>
+        <ul class="links">
+            <li>Journey</li>
+            <li>Work</li>
+            <li>About</li>
         </ul>
     </nav>
-    
   </header>
-  <h1>Laptop music</h1>
   <main>
-    <section id="intro">
-      <p>Welcome to our site. We do thing X, Y, Z...</p>
+    <button *ngIf="showAudioPrompt" class="audio-enable-btn" (click)="enableAudio()">
+      🔊 Click to Enable Audio
+    </button>
+    <section id="intro" (mouseenter)="playMusic()" (mouseleave)="stopMusic()">
+      <img class="overlay-img" [src]="currentImage" alt="image for dashboard">
+      <h1>Laptop music</h1>
+      <audio #audioPlayer src="../../assets/audio/Jasiel x prod.kidnxtdoor - Atoms C# min 140.mp3" preload="auto"></audio>
     </section>
-    <!-- more sections as needed -->
   </main>
   <footer>
     <p>&copy; 2025 Kidnxtdoor</p>

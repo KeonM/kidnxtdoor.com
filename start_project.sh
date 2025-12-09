@@ -8,7 +8,7 @@ NODE_VERSION="22.12"
 echo "Navigating to $PROJECT_DIR..."
 cd "$PROJECT_DIR" || { echo "Error: Directory not found. Exiting."; exit 1; }
 
-# 2. Set the Node version using nvm
+# # 2. Set the Node version using nvm
 echo "Switching to Node version $NODE_VERSION..."
 # Source nvm so it's available in this script's environment
 export NVM_DIR="$HOME/.nvm"
