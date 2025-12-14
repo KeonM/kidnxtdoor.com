@@ -72,7 +72,7 @@ html, body {
   }
 
   li:hover {
-    cursor: pointer;
+    cursor: crosshair;
     background-color: black;
     color: transparent;
     border-radius: 20px;

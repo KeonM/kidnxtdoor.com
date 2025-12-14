@@ -1,10 +1,16 @@
 * {
     /* background-color: black; */
+    font-family: 'BBH Sans Bartle', sans-serif;
+
 }
 html,
 body {
   height: 100%;
   margin: 0;
+}
+
+nav:hover {
+    cursor:help;
 }
 
 body {
@@ -26,7 +32,6 @@ main {
 }
 
 h1 {
-    font-family: 'BBH Sans Bartle', sans-serif;
     color: black;
     font-size: 8rem;
     overflow: hidden;
@@ -62,6 +67,7 @@ h1 {
 .video-text {
     height: 100%;
     width: 100%;
+    /* background: url('../../assets/images/background.png'); */
     background: white;
     color: black;
     display: flex;
@@ -70,12 +76,8 @@ h1 {
     mix-blend-mode: screen;
 }
 
-/* .video-text {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    mix-blend-mode: multiply;
-} */
+.video-text:hover {
+    cursor: pointer;
+}
 
 
