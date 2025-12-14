@@ -1,0 +1,81 @@
+* {
+    /* background-color: black; */
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 80px; /* or whatever your header height is */
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+h1 {
+    font-family: 'BBH Sans Bartle', sans-serif;
+    color: black;
+    font-size: 8rem;
+    overflow: hidden;
+    /* background-color: lightblue;  */
+    /* transform: scaleY(10); */
+    height: 100%;
+    display: flex;
+    align-items: stretch
+
+}
+
+.video-container {
+    /* display: inline-block; */
+    position: relative;
+    width: 100%; 
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.video-text {
+    height: 100%;
+    width: 100%;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    mix-blend-mode: screen;
+}
+
+/* .video-text {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    mix-blend-mode: multiply;
+} */
+
+

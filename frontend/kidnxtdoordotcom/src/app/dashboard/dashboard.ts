@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
@@ -26,7 +27,10 @@ export class Dashboard implements OnDestroy {
   audioEnabled = false;
   showAudioPrompt = true;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private router: Router,
+  ) {}
 
   enableAudio() {
     this.audioEnabled = true;
@@ -63,6 +67,10 @@ export class Dashboard implements OnDestroy {
 
     this.currentIndex = 0;
     this.currentImage = this.images[0];
+  }
+
+  navigatePage(route: string) {
+    this.router.navigate([route]);
   }
 
   ngOnDestroy() {
