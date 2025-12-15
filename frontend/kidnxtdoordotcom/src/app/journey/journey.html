@@ -1,0 +1,206 @@
+<header>
+  
+    <nav>
+       <p (click)="goHome()">> return</p>
+    </nav>
+  </header>
+  
+  <main>
+    <ng-container *ngIf="isLoading">
+        <div class="loading-container">
+            loading :)
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!isLoading">
+        <div *ngIf="openModal" class="video-modal" (click)="videoModal('')">
+            <video #videoJ1 autoplay playsinline width="320" height="240" >
+                <source [src]='currVid' type="video/mp4" />
+              </video>
+          </div>
+          
+          <!-- Journey 1 -->
+          <i class="fa-solid fa-x"></i>
+          <h1>
+            <span class="video-container">
+              <video #videoJ1 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey1/J1.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoJ1)" (mouseleave)="stopVideo(videoJ1)" (click)="videoModal('../../assets/video/journey1/J1.mp4')">
+                J
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoO1 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey1/O1.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoO1)" (mouseleave)="stopVideo(videoO1)" (click)="videoModal('../../assets/video/journey1/O1.mp4')">
+                O
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoU1 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey1/U1.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoU1)" (mouseleave)="stopVideo(videoU1)" (click)="videoModal('../../assets/video/journey1/U1.mp4')">
+                U
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoR1 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey1/R1.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoR1)" (mouseleave)="stopVideo(videoR1)" (click)="videoModal('../../assets/video/journey1/R1.mp4')">
+                R
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoN1 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey1/N1.mp4" type="video/mp4" />
+              </video>
+              <div
+                class="video-text"
+                (mouseenter)="playVideo(videoN1)"
+                (mouseleave)="stopVideo(videoN1)"
+                (click)="videoModal('../../assets/video/journey1/N1.mp4')"
+              >
+                N
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoE1 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey1/E1.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoE1)" (mouseleave)="stopVideo(videoE1)" (click)="videoModal('../../assets/video/journey1/E1.mp4')">
+                E
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoY1 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey1/Y1.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoY1)" (mouseleave)="stopVideo(videoY1)" (click)="videoModal('../../assets/video/journey1/Y1.mp4')">
+                Y
+              </div>
+            </span>
+          </h1>
+          <!-- Journey 2 -->
+          <h1>
+            <span class="video-container">
+              <video #videoJ2 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey2/J2.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoJ2)" (mouseleave)="stopVideo(videoJ2)" (click)="videoModal('../../assets/video/journey2/J2.mp4')">
+                J
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoO2 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey2/O2.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoO2)" (mouseleave)="stopVideo(videoO2)" (click)="videoModal('../../assets/video/journey2/O2.mp4')">
+                O
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoU2 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey2/U2.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoU2)" (mouseleave)="stopVideo(videoU2)" (click)="videoModal('../../assets/video/journey2/U2.mp4')">
+                U
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoR2 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey2/R2.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoR2)" (mouseleave)="stopVideo(videoR2)" (click)="videoModal('../../assets/video/journey2/R2.mp4')">
+                R
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoN2 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey2/N2.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoN2)" (mouseleave)="stopVideo(videoN2)" (click)="videoModal('../../assets/video/journey2/N2.mp4')">
+                N
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoE2 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey2/E2.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoE2)" (mouseleave)="stopVideo(videoE2)" (click)="videoModal('../../assets/video/journey2/E2.mp4')">
+                E
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoY2 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey2/Y2.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoY2)" (mouseleave)="stopVideo(videoY2)" (click)="videoModal('../../assets/video/journey2/Y2.mp4')">
+                Y
+              </div>
+            </span>
+          </h1>
+          <!-- Journey 3 -->
+          <h1>
+            <span class="video-container">
+              <video #videoJ3 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey3/J3.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoJ3)" (mouseleave)="stopVideo(videoJ3)" (click)="videoModal('../../assets/video/journey3/J3.mp4')">
+                J
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoO3 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey3/O3.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoO3)" (mouseleave)="stopVideo(videoO3)" (click)="videoModal('../../assets/video/journey3/O3.mp4')">
+                O
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoU3 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey3/U3.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoU3)" (mouseleave)="stopVideo(videoU3)" (click)="videoModal('../../assets/video/journey3/U3.mp4')">
+                U
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoR3 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey3/R3.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoR3)" (mouseleave)="stopVideo(videoR3)" (click)="videoModal('../../assets/video/journey3/R3.mp4')">
+                R
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoN3 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey3/N3.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoN3)" (mouseleave)="stopVideo(videoN3)" (click)="videoModal('../../assets/video/journey3/N3.mp4')">
+                N
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoE3 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey3/E3.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoE3)" (mouseleave)="stopVideo(videoE3)" (click)="videoModal('../../assets/video/journey3/E3.mp4')">
+                E
+              </div>
+            </span>
+            <span class="video-container">
+              <video #videoY3 muted loop playsinline width="320" height="240">
+                <source src="../../assets/video/journey3/Y3.mp4" type="video/mp4" />
+              </video>
+              <div class="video-text" (mouseenter)="playVideo(videoY3)" (mouseleave)="stopVideo(videoY3)" (click)="videoModal('../../assets/video/journey3/Y3.mp4')">
+                Y
+              </div>
+            </span>
+          </h1>
+    </ng-container>
+    
+  </main>
