@@ -1,7 +1,6 @@
 * {
-    /* background-color: black; */
-    font-family: 'BBH Sans Bartle', sans-serif;
-
+  /* background-color: black; */
+  font-family: 'BBH Sans Bartle', sans-serif;
 }
 html,
 body {
@@ -9,8 +8,8 @@ body {
   margin: 0;
 }
 
-nav:hover {
-    cursor:help;
+p:hover {
+  cursor: help;
 }
 
 body {
@@ -32,52 +31,68 @@ main {
 }
 
 h1 {
-    color: black;
-    font-size: 8rem;
-    overflow: hidden;
-    /* background-color: lightblue;  */
-    /* transform: scaleY(10); */
-    height: 100%;
-    display: flex;
-    align-items: stretch
-
+  color: black;
+  font-size: 8rem;
+  overflow: hidden;
+  /* background-color: lightblue;  */
+  /* transform: scaleY(10); */
+  height: 100%;
+  display: flex;
+  align-items: stretch;
 }
 
 .video-container {
-    /* display: inline-block; */
-    position: relative;
-    width: 100%; 
-    height: 100%;
-    overflow: hidden;
+  /* display: inline-block; */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .video-container video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: cover;
-    z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .video-text {
-    height: 100%;
-    width: 100%;
-    /* background: url('../../assets/images/background.png'); */
-    background: white;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    mix-blend-mode: screen;
+  height: 100%;
+  width: 100%;
+  /* background: url('../../assets/images/background.png'); */
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: screen;
 }
 
 .video-text:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.video-modal video {
+  transform: scale(2);
 }
 
 
