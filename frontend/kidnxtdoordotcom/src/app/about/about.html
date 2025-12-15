@@ -3,3 +3,21 @@
         <p (click)="goHome()">> return</p>
     </nav>
 </header>
+<main>
+    <div class="loading-container">
+        All _ about _ making _ beautiful _ music
+    </div>
+    <div class="signup-wrapper">
+        <button class="btn" (click)="signUpOption()" *ngIf="!isSignUpOpen">
+            Let me send you some music
+        </button>
+        <button class="btn" (click)="signUpOption()" *ngIf="isSignUpOpen">
+            Close
+        </button>
+        <div class="signup-form" [class.open]="isSignUpOpen" >
+            <input type="text" [(ngModel)]="email" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <input type="text" [(ngModel)]="wants" placeholder="want beats, loops, mixes, etc.">
+            <button (click)="sendInformation()">Submit</button>
+        </div>
+    </div>
+</main>
