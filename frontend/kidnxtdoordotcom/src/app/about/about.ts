@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SendInformation } from '../services/send-information';
 
 @Component({
   selector: 'app-about',
@@ -10,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './about.css',
 })
 export class About {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private infoService: SendInformation) {}
 
   isSignUpOpen: boolean = false;
   email: string = '';
@@ -24,9 +25,8 @@ export class About {
     this.isSignUpOpen = !this.isSignUpOpen;
   }
 
-  sendInformation() {
+  async sendInformation() {
     let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    let receivesEmails = 'x@gmail.com'
 
     if (!regex.test(this.email)) {
       alert('Please enter a valid email address.');
@@ -37,10 +37,15 @@ export class About {
       return;
     }
 
-    // add a backend here for emails to be submitted to
-
-    this.email = '';
-    this.wants = '';
-    // Here you would typically send the data to your backend server
+    try {
+      await this.infoService.sendInformation(this.email, this.wants);
+      alert(`Thank you for signing up! I'll send "${this.wants}" to ${this.email}.`);
+      this.email = '';
+      this.wants = '';
+      this.isSignUpOpen = false;
+    } catch (error) {
+      alert('Error submitting your information. Please try again.');
+      console.error(error);
+    }
   }
 }
