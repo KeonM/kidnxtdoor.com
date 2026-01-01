@@ -16,7 +16,22 @@
           >do<span class="material-symbols-outlined"> door_open </span> r</span
         >
       </p>
-      <span class="material-symbols-outlined"> play_circle </span>
+
+      <div class="audio-player" (click)="controlMusic()">
+        <span *ngIf="!isPlaying" class="material-symbols-outlined"> play_circle </span>
+        <span *ngIf="isPlaying" class="material-symbols-outlined"> pause_circle </span>
+      </div>
+
+      <audio
+        #audioRef
+        style="display: none"
+        loop
+      ></audio>
+      
+      <!-- <audio
+      controls
+        src="frontend\kidnxtdoordotcom\src\assets\audio\Jasiel x prod.kidnxtdoor - Atoms C# min 140.mp3"
+      ></audio> -->
 
       <ul class="links">
         <li (click)="navigatePage('/journey')">Journey</li>
@@ -26,17 +41,13 @@
     </nav>
   </header>
   <main>
-    <section id="intro" (mouseenter)="playMusic()" (mouseleave)="stopMusic()">
+    <section id="intro" (mouseenter)="playCarousel()" (mouseleave)="stopCarousel()">
       <img class="overlay-img" [src]="currentImage" alt="image for dashboard" />
       <!-- <h1>Laptop music</h1> -->
-      <audio
-        #audioPlayer
-        src="../../assets/audio/Jasiel x prod.kidnxtdoor - Atoms C# min 140.mp3"
-        preload="auto"
-      ></audio>
     </section>
   </main>
   <footer>
-    <p>&copy; 2026 Laptop Music (Kidnxtdoor)</p>
+    <!-- <p>&copy; 2026 Laptop Music (Kidnxtdoor)</p> -->
+    <p>Laptop Music 2026</p>
   </footer>
 </body>

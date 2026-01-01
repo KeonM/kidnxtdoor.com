@@ -192,3 +192,7 @@ html, body {
     color: black;
     border: 2px solid black;
   } 
+
+  .audio-player:hover {
+    cursor: pointer;
+  }

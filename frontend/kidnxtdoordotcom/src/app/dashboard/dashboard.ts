@@ -10,7 +10,7 @@ import { interval, Subscription } from 'rxjs';
   styleUrl: './dashboard.css',
 })
 export class Dashboard implements OnDestroy {
-  @ViewChild('audioPlayer', { static: false }) audioPlayer!: ElementRef<HTMLAudioElement>;
+  @ViewChild('audioRef') audioRef!: ElementRef<HTMLAudioElement>;
 
   images: string[] = [
     '../../assets/images/dashboard/white/knd1.png',
@@ -40,6 +40,7 @@ export class Dashboard implements OnDestroy {
   audioEnabled = false;
   showAudioPrompt = true;
   doorClosed = true;
+  isPlaying = false;
 
   constructor(private cdr: ChangeDetectorRef, private router: Router) {}
 
@@ -56,15 +57,8 @@ export class Dashboard implements OnDestroy {
     this.showAudioPrompt = false;
   }
 
-  playMusic() {
+  playCarousel() {
     if (this.playSub && !this.playSub.closed) return;
-
-    // Start audio playback only if enabled
-    if (this.audioEnabled && this.audioPlayer) {
-      this.audioPlayer.nativeElement.play().catch((err) => {
-        console.error('Audio play failed:', err);
-      });
-    }
 
     this.playSub = interval(this.intervalMs).subscribe(() => {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
@@ -73,19 +67,28 @@ export class Dashboard implements OnDestroy {
     });
   }
 
-  stopMusic() {
+  stopCarousel() {
     if (this.playSub) {
       this.playSub.unsubscribe();
       this.playSub = null;
     }
 
-    if (this.audioEnabled && this.audioPlayer) {
-      this.audioPlayer.nativeElement.pause();
-      this.audioPlayer.nativeElement.currentTime = 0;
-    }
-
     this.currentIndex = 0;
     this.currentImage = '../../assets/images/dashboard/white/knd13.png';
+  }
+
+  controlMusic() {
+    this.isPlaying = !this.isPlaying;
+
+    if (this.isPlaying) {
+      const audio = this.audioRef.nativeElement;
+      audio.src = "../../assets/audio/investors.mp3";
+      audio.load();
+      audio.play();
+      console.log(audio.src)
+    } else {
+      this.audioRef.nativeElement.pause();
+    }
   }
 
   navigatePage(route: string) {
