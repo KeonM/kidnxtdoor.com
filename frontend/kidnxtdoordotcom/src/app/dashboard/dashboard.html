@@ -1,15 +1,16 @@
 <body>
   <header>
     <nav>
-      <p id="kidnxtdoor">
+      <p id="kidnxtdoor" (mouseenter)="doorControls()" (mouseleave)="doorControls()" (click)="openIG()">
         <span class="space1">Kid</span>
         <span class="space2">nxt</span>
-        <span class="space3">do<span class="material-symbols-outlined">sensor_door</span>r</span>
+        <span *ngIf="doorClosed"  class="space3">do<span class="material-symbols-outlined"> door_front </span>r</span>
+        <span *ngIf="!doorClosed"  class="space3">do<span class="material-symbols-outlined"> door_open </span> r</span>
       </p>
+      <span class="material-symbols-outlined"> play_circle </span>
+
       <ul class="links">
-        <!-- <li>
-          <span class="material-symbols-outlined"> play_circle </span>
-        </li> -->
+       
         <li (click)="navigatePage('/journey')">Journey</li>
         <!-- <li (click)="navigatePage('/work')">Work</li> -->
         <li (click)="navigatePage('/about')">About</li>
