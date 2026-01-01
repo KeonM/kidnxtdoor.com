@@ -14,8 +14,9 @@ h1 {
                -1px -1px 2px rgba(0, 0, 0, 0.8);;
 }
 
-#kidnxtdoor {
-  cursor: pointer;
+#intro {
+  height: 72.5vh; /* Full viewport height */
+
 }
 
 header {
@@ -63,5 +64,7 @@ header {
 }
 
 #kidnxtdoor {
+  cursor: pointer;
   transform: translateY(-3px);
 }
+
