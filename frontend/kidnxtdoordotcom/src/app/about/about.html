@@ -1,5 +1,30 @@
 <header>
-    <nav>
-        <p (click)="goHome()">> return</p>
-    </nav>
+  <nav>
+    <p (click)="goHome()">> return</p>
+  </nav>
 </header>
+<main>
+  <div class="loading-container">All<span style="color: rgba(154, 69, 228, 0.677);">about</span>making<span style="color: rgb(107, 6, 195);">beautiful</span>music</div>
+  <!-- TODO: fix this signup -->
+  <!-- <div class="signup-wrapper">
+    <button class="btn" (click)="signUpOption()" *ngIf="!isSignUpOpen">
+      > Let me send you some <
+    </button>
+    <button class="btn" (click)="signUpOption()" *ngIf="isSignUpOpen">Close</button>
+    <div class="signup-form" [class.open]="isSignUpOpen">
+      <input
+        type="email"
+        [(ngModel)]="email"
+        placeholder="email"
+        (keyup.enter)="sendInformation()"
+      />
+      <input
+        type="text"
+        [(ngModel)]="wants"
+        placeholder="want beats, loops, mixes, etc."
+        (keyup.enter)="sendInformation()"
+      />
+      <button (click)="sendInformation()">Submit</button>
+    </div>
+  </div> -->
+</main>

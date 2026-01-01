@@ -1,30 +1,42 @@
-
 <body>
   <header>
     <nav>
-        <p id="kidnxtdoor">
-          <span class="space1">Kid</span>
-          <span class="space2">nxt</span>
-          <span class="space3">do<span class="material-symbols-outlined">sensor_door</span>r</span>
-        </p>
-        <ul class="links">
-            <li (click)="navigatePage('/journey')">Journey</li>
-            <li (click)="navigatePage('/work')">Work</li>
-            <li (click)="navigatePage('/about')">About</li>
-        </ul>
+      <p
+        id="kidnxtdoor"
+        (mouseenter)="doorControls()"
+        (mouseleave)="doorControls()"
+        (click)="openIG()"
+      >
+        <span class="space1">Kid</span>
+        <span class="space2">nxt</span>
+        <span *ngIf="doorClosed" class="space3"
+          >do<span class="material-symbols-outlined"> door_front </span>r</span
+        >
+        <span *ngIf="!doorClosed" class="space3"
+          >do<span class="material-symbols-outlined"> door_open </span> r</span
+        >
+      </p>
+      <span class="material-symbols-outlined"> play_circle </span>
+
+      <ul class="links">
+        <li (click)="navigatePage('/journey')">Journey</li>
+        <!-- <li (click)="navigatePage('/work')">Work</li> -->
+        <li (click)="navigatePage('/about')">About</li>
+      </ul>
     </nav>
   </header>
   <main>
-    <!-- <button *ngIf="showAudioPrompt" class="audio-enable-btn" (click)="enableAudio()">
-      🔊 Click to Enable Audio
-    </button> -->
     <section id="intro" (mouseenter)="playMusic()" (mouseleave)="stopMusic()">
-      <img class="overlay-img" [src]="currentImage" alt="image for dashboard">
-      <h1>Laptop music</h1>
-      <audio #audioPlayer src="../../assets/audio/Jasiel x prod.kidnxtdoor - Atoms C# min 140.mp3" preload="auto"></audio>
+      <img class="overlay-img" [src]="currentImage" alt="image for dashboard" />
+      <!-- <h1>Laptop music</h1> -->
+      <audio
+        #audioPlayer
+        src="../../assets/audio/Jasiel x prod.kidnxtdoor - Atoms C# min 140.mp3"
+        preload="auto"
+      ></audio>
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 Kidnxtdoor</p>
+    <p>&copy; 2026 Laptop Music (Kidnxtdoor)</p>
   </footer>
 </body>
