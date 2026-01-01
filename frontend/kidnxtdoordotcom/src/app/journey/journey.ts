@@ -30,7 +30,7 @@ export class Journey implements OnInit {
       '../../assets/video/journey1/E1.mp4',
       '../../assets/video/journey1/Y1.mp4',
       // Journey 2
-      // '../../assets/video/journey2/J2.mp4',
+      '../../assets/video/journey2/J2.mp4',
       // '../../assets/video/journey2/O2.mp4',
       // '../../assets/video/journey2/U2.mp4',
       // '../../assets/video/journey2/R2.mp4',
