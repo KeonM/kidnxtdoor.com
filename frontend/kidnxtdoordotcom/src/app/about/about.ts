@@ -21,6 +21,10 @@ export class About {
     this.router.navigate(['']);
   }
 
+  toggleDiscord() {
+    window.open('https://discord.gg/zq7mPqDSyP', '_blank');
+  }
+
   signUpOption() {
     this.isSignUpOpen = !this.isSignUpOpen;
   }

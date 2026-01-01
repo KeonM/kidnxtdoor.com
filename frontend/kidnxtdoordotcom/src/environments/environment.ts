@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  firebaseConfig: {
+  firebase: {
     apiKey: 'AIzaSyAj_zlEebN7FFfTRxo8D7-tZNOd2mo9kA8',
     authDomain: 'kidnxtdoor-dotcom.firebaseapp.com',
     projectId: 'kidnxtdoor-dotcom',
