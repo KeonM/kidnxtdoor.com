@@ -19,10 +19,7 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "outputPath": {
-              "base": "dist/kidnxtdoordotcom",
-              "browser": ""
-            },
+            "outputPath": "docs",
             "assets": [
               "src/assets",
               {
