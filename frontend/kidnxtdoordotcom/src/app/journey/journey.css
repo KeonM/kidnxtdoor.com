@@ -1,11 +1,15 @@
 * {
-  /* background-color: black; */
   font-family: 'BBH Sans Bartle', sans-serif;
 }
+
 html,
 body {
   height: 100%;
   margin: 0;
+}
+
+p {
+  line-height: 1.6;
 }
 
 p:hover {
@@ -18,7 +22,8 @@ body {
 }
 
 header {
-  height: 80px; /* or whatever your header height is */
+  height: 80px;
+  flex-shrink: 0;
 }
 
 main {
@@ -28,25 +33,26 @@ main {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  padding: 1rem 0;
 }
 
 h1 {
   color: black;
   font-size: 8rem;
   overflow: hidden;
-  /* background-color: lightblue;  */
-  /* transform: scaleY(10); */
   height: 100%;
   display: flex;
   align-items: stretch;
+  flex-wrap: nowrap;
 }
 
 .video-container {
-  /* display: inline-block; */
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  flex: 1;
+  min-width: 0;
 }
 
 .video-container video {
@@ -65,17 +71,19 @@ h1 {
 .video-text {
   height: 100%;
   width: 100%;
-  /* background: url('../../assets/images/background.png'); */
   background: white;
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   mix-blend-mode: screen;
+  transition: transform 0.3s ease;
 }
 
-.video-text:hover {
+.video-text:hover,
+.video-text:focus {
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 .video-modal {
@@ -89,10 +97,86 @@ h1 {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .video-modal video {
   transform: scale(2);
+  max-width: 90%;
+  max-height: 90%;
 }
 
+/* Mobile responsive adjustments */
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
 
+@media screen and (max-width: 768px) {
+  header {
+    height: 60px;
+  }
+
+  main {
+    padding: 0.5rem 0;
+  }
+
+  h1 {
+    font-size: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .video-container {
+    min-height: 80px;
+  }
+
+  .video-modal video {
+    transform: scale(1.5);
+    max-width: 95%;
+    max-height: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    height: 50px;
+  }
+
+  main {
+    padding: 0.25rem 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .video-container {
+    min-height: 60px;
+  }
+
+  .video-modal {
+    padding: 0.5rem;
+  }
+
+  .video-modal video {
+    transform: scale(1);
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .video-container {
+    min-height: 50px;
+  }
+}

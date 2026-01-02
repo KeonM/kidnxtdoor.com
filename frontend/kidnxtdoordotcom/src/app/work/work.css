@@ -1,11 +1,38 @@
 * {
-    font-family: 'BBH Sans Bartle', sans-serif;
+  font-family: 'BBH Sans Bartle', sans-serif;
 }
-html, body {
-    height: 100%;
-    margin: 0;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+p {
+  line-height: 1.6;
 }
 
 p:hover {
-    cursor: help;
+  cursor: help;
+}
+
+/* Mobile responsive adjustments */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  p {
+    line-height: 1.5;
+  }
 }
