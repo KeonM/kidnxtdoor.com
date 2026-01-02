@@ -11,7 +11,9 @@ import { SendInformation } from '../services/send-information';
   styleUrl: './about.css',
 })
 export class About {
-  constructor(private router: Router, private infoService: SendInformation) {}
+  // constructor(private router: Router, private infoService: SendInformation) {}
+  constructor(private router: Router) {}
+
 
   isSignUpOpen: boolean = false;
   email: string = '';
@@ -29,27 +31,27 @@ export class About {
     this.isSignUpOpen = !this.isSignUpOpen;
   }
 
-  async sendInformation() {
-    let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  // async sendInformation() {
+  //   let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    if (!regex.test(this.email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-    if (this.wants.trim() === '') {
-      alert('Please specify what you would like to sign up for.');
-      return;
-    }
+  //   if (!regex.test(this.email)) {
+  //     alert('Please enter a valid email address.');
+  //     return;
+  //   }
+  //   if (this.wants.trim() === '') {
+  //     alert('Please specify what you would like to sign up for.');
+  //     return;
+  //   }
 
-    try {
-      await this.infoService.sendInformation(this.email, this.wants);
-      alert(`Thank you for signing up! I'll send "${this.wants}" to ${this.email}.`);
-      this.email = '';
-      this.wants = '';
-      this.isSignUpOpen = false;
-    } catch (error) {
-      alert('Error submitting your information. Please try again.');
-      console.error(error);
-    }
-  }
+  //   try {
+  //     await this.infoService.sendInformation(this.email, this.wants);
+  //     alert(`Thank you for signing up! I'll send "${this.wants}" to ${this.email}.`);
+  //     this.email = '';
+  //     this.wants = '';
+  //     this.isSignUpOpen = false;
+  //   } catch (error) {
+  //     alert('Error submitting your information. Please try again.');
+  //     console.error(error);
+  //   }
+  // }
 }
