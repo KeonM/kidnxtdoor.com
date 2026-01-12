@@ -30,8 +30,7 @@
     }
   ],
   "hosting": {
-    "site": "kidnxtdoor",
-    "public": "public",
+    "public": "frontend/kidnxtdoordotcom/dist/kidnxtdoordotcom",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
