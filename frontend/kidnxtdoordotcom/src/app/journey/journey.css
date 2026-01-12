@@ -1,11 +1,15 @@
 * {
-  /* background-color: black; */
   font-family: 'BBH Sans Bartle', sans-serif;
 }
+
 html,
 body {
   height: 100%;
   margin: 0;
+}
+
+p {
+  line-height: 1.6;
 }
 
 p:hover {
@@ -18,7 +22,8 @@ body {
 }
 
 header {
-  height: 80px; /* or whatever your header height is */
+  height: 80px;
+  flex-shrink: 0;
 }
 
 main {
@@ -28,54 +33,83 @@ main {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  padding: 0;
 }
 
 h1 {
   color: black;
   font-size: 8rem;
   overflow: hidden;
-  /* background-color: lightblue;  */
-  /* transform: scaleY(10); */
   height: 100%;
   display: flex;
   align-items: stretch;
+  flex-wrap: nowrap;
 }
 
 .video-container {
-  /* display: inline-block; */
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  flex: 1;
+  min-width: 0;
+  contain: layout style paint;
+  will-change: transform;
 }
 
 .video-container video {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) translateZ(0);
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
   object-fit: cover;
   z-index: -1;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .video-text {
   height: 100%;
   width: 100%;
-  /* background: url('../../assets/images/background.png'); */
   background: white;
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   mix-blend-mode: screen;
+  transition: transform 0.3s ease;
 }
 
-.video-text:hover {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+.video-text:hover,
+.video-text:focus {
   cursor: pointer;
+  transform: scale(1.05);
+}
+
+.video-text:active {
+  animation: ripple 0.6s ease-out;
 }
 
 .video-modal {
@@ -84,15 +118,94 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+  box-sizing: border-box;
 }
 
 .video-modal video {
   transform: scale(2);
+  max-width: 90%;
+  max-height: 90%;
 }
 
+/* Mobile responsive adjustments */
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
 
+@media screen and (max-width: 768px) {
+  header {
+    height: 60px;
+  }
+
+  main {
+    padding: 0.5rem 0;
+  }
+
+  h1 {
+    font-size: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .video-container {
+    min-height: 80px;
+  }
+
+  .video-modal video {
+    transform: scale(1.5);
+    max-width: 95%;
+    max-height: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    height: 50px;
+  }
+
+  main {
+    padding: 0.25rem 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .video-container {
+    min-height: 60px;
+  }
+
+  .video-modal {
+    padding: 0.5rem;
+  }
+
+  .video-modal video {
+    transform: scale(1);
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .video-container {
+    min-height: 50px;
+  }
+}
