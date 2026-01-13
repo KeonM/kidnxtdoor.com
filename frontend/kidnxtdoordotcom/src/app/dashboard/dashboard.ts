@@ -13,27 +13,27 @@ export class Dashboard implements OnDestroy {
   @ViewChild('audioRef') audioRef!: ElementRef<HTMLAudioElement>;
 
   images: string[] = [
-    '../../assets/images/dashboard/white/knd1.png',
-    '../../assets/images/dashboard/white/knd2.png',
-    '../../assets/images/dashboard/white/knd3.png',
-    '../../assets/images/dashboard/white/knd4.png',
-    '../../assets/images/dashboard/white/knd5.png',
-    '../../assets/images/dashboard/white/knd6.png',
-    '../../assets/images/dashboard/white/knd7.png',
-    '../../assets/images/dashboard/white/knd8.png',
-    '../../assets/images/dashboard/white/knd9.png',
-    '../../assets/images/dashboard/white/knd10.png',
-    '../../assets/images/dashboard/white/knd11.png',
-    '../../assets/images/dashboard/white/knd12.png',
-    '../../assets/images/dashboard/white/knd13.png',
-    '../../assets/images/dashboard/white/knd14.png',
-    '../../assets/images/dashboard/white/knd15.png',
-    '../../assets/images/dashboard/white/knd16.png',
-    '../../assets/images/dashboard/white/knd17.png',
-    '../../assets/images/dashboard/white/knd18.png',
+    'assets/images/dashboard/white/knd1.png',
+    'assets/images/dashboard/white/knd2.png',
+    'assets/images/dashboard/white/knd3.png',
+    'assets/images/dashboard/white/knd4.png',
+    'assets/images/dashboard/white/knd5.png',
+    'assets/images/dashboard/white/knd6.png',
+    'assets/images/dashboard/white/knd7.png',
+    'assets/images/dashboard/white/knd8.png',
+    'assets/images/dashboard/white/knd9.png',
+    'assets/images/dashboard/white/knd10.png',
+    'assets/images/dashboard/white/knd11.png',
+    'assets/images/dashboard/white/knd12.png',
+    'assets/images/dashboard/white/knd13.png',
+    'assets/images/dashboard/white/knd14.png',
+    'assets/images/dashboard/white/knd15.png',
+    'assets/images/dashboard/white/knd16.png',
+    'assets/images/dashboard/white/knd17.png',
+    'assets/images/dashboard/white/knd18.png',
   ];
 
-  currentImage = '../../assets/images/dashboard/white/knd13.png';
+  currentImage = 'assets/images/dashboard/white/knd13.png';
   private currentIndex = 0;
   private playSub: Subscription | null = null;
   private readonly intervalMs = 150;
@@ -60,6 +60,8 @@ export class Dashboard implements OnDestroy {
   playCarousel() {
     if (this.playSub && !this.playSub.closed) return;
 
+    
+
     this.playSub = interval(this.intervalMs).subscribe(() => {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
       this.currentImage = this.images[this.currentIndex];
@@ -74,7 +76,7 @@ export class Dashboard implements OnDestroy {
     }
 
     this.currentIndex = 0;
-    this.currentImage = '../../assets/images/dashboard/white/knd13.png';
+    this.currentImage = 'assets/images/dashboard/white/knd13.png';
   }
 
   controlMusic() {
@@ -82,10 +84,10 @@ export class Dashboard implements OnDestroy {
 
     if (this.isPlaying) {
       const audio = this.audioRef.nativeElement;
-      audio.src = "../../assets/audio/investors.mp3";
+      audio.src = 'assets/audio/investors.mp3';
       audio.load();
       audio.play();
-      console.log(audio.src)
+      console.log(audio.src);
     } else {
       this.audioRef.nativeElement.pause();
     }
