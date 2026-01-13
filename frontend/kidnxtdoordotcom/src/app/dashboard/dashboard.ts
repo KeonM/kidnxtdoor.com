@@ -60,6 +60,8 @@ export class Dashboard implements OnDestroy {
   playCarousel() {
     if (this.playSub && !this.playSub.closed) return;
 
+    
+
     this.playSub = interval(this.intervalMs).subscribe(() => {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
       this.currentImage = this.images[this.currentIndex];
